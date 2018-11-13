@@ -1,5 +1,3 @@
-// import 'materialize-css/dist/css/materialize.min.css';
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDom from 'react-dom';
 import { Provider } from 'react-redux';

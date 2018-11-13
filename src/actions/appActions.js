@@ -1,42 +1,26 @@
 import axios from 'axios';
-import { FETCH_CONTACTS, SELECT_CONTACT, CREATE_USER } from './types';
+import { FETCH_COUNTRIES, SELECT_COUNTRY} from './types';
 
-// import _ from 'lodash';
-
-export const fetchContacts = () => async dispatch => {
+export const fetchCountries = () => async dispatch => {
   try {
       const res = await axios({
         method:'get',
-        url: 'https://jsonplaceholder.typicode.com/users',
+        url: 'https://restcountries.eu/rest/v2/all',
         json: true
       });
-      //console.log(res);
-      dispatch({type: FETCH_CONTACTS, payload: res.data});
+      dispatch({type: FETCH_COUNTRIES, payload: res.data});
   }
   catch(err){
     alert(err);
   }
 };
-export const selectContact = (contact) => {
-  // console.log("selectContact action", contact);
+
+export const selectCountry = (country) => {
   return {
-      type: SELECT_CONTACT,
-      payload: contact
+      type: SELECT_COUNTRY,
+      payload: country
     };
 }
 
-export const createUser = (values) => async dispatch => {
-  try{
-    const res = await axios({
-      method: 'post',
-      url: 'https://jsonplaceholder.typicode.com/posts',
-      data: values,
-      json: true
-    });
-    dispatch({type: CREATE_USER, payload: res})
-  } 
-  catch(err){
-    alert(err);
-  }
-}
+
 
