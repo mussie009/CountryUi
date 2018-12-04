@@ -45,7 +45,7 @@ class CountriesList extends Component {
                   accessor: "region"
                 },
                 {
-                  Header: 'Capital',
+                  Header: 'Capital City',
                   accessor: "capital"
                 },
               
